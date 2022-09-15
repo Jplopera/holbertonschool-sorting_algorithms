@@ -9,7 +9,6 @@ void selection_sort(int *array, size_t size)
 	size_t x, y, i;
 	int tmp;
 
-
 	for (x = 0; x < size; x++)
 	{
 		i = x;
@@ -19,13 +18,13 @@ void selection_sort(int *array, size_t size)
 			{
 				i = y;
 			}
-			if (x != i)
-			{
-				tmp = array[x];
-				array[x] = array[i];
-				array[i] = tmp;
-				print_array(array, size);
-			}
+		}
+		if (x != i)
+		{
+			tmp = array[x];
+			array[x] = array[i];
+			array[i] = tmp;
+			print_array(array, size);
 		}
 	}
 }
