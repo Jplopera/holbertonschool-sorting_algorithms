@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * quicksort - sorts a partition of an array of integers
+ * quick_sort - sorts a partition of an array of integers
  * @array: array to be sorted
  * @size: size of the array
  */
