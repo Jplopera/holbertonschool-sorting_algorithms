@@ -6,11 +6,11 @@
  */
 void quick_sort(int *array, size_t size)
 {
-    if (size < 2)
-    {
-        return;
-    }
-    quick_helper(array, 0, (int)size -1, size);
+	if (size < 2)
+	{
+		return;
+	}
+	quick_helper(array, 0, (int)size - 1, size);
 }
 
 /**
@@ -22,14 +22,14 @@ void quick_sort(int *array, size_t size)
  */
 void quick_helper(int *array, int l, int r, size_t size)
 {
-    int pos;
+	int pos;
 
-    if (l < r)
-    {
-        pos = separater(array, l, r, size);
-        quick_helper(array, l, pos -1, size);
-        quick_helper(array, pos + 1, r, size);
-    }
+	if (l < r)
+	{
+		pos = separater(array, l, r, size);
+		quick_helper(array, l, pos - 1, size);
+		quick_helper(array, pos + 1, r, size);
+	}
 }
 
 /**
@@ -44,31 +44,31 @@ void quick_helper(int *array, int l, int r, size_t size)
 
 int separater(int *array, int l, int r, size_t size)
 {
-    int x, y, tmp;
+	int x, y, tmp;
 
-    x = l -1;
+	x = l - 1;
 
-    for ( y = l; y < r; y++)
-    {
-        if (array[y] < array[r])
-        {
-            x++;
-            if (x != y)
-            {
-                tmp = array[x];
-                array[x] = array[y];
-                array[y] = tmp;
-                print_array(array, size);
-            }
-        }
-    }
+	for (y = l; y < r; y++)
+	{
+		if (array[y] < array[r])
+		{
+			x++;
+			if (x != y)
+			{
+				tmp = array[x];
+				array[x] = array[y];
+				array[y] = tmp;
+				print_array(array, size);
+			}
+		}
+	}
 
-    if (array[r] < array[x +1])
-    {
-        tmp = array[x + 1];
-        array[x +1] = array[r];
-        array[r] = tmp;
-        print_array(array, size);
-    }
-    return(x + 1);
+	if (array[r] < array[x + 1])
+	{
+		tmp = array[x + 1];
+		array[x + 1] = array[r];
+		array[r] = tmp;
+		print_array(array, size);
+	}
+	return (x + 1);
 }
